@@ -1,0 +1,44 @@
+#content {
+    text-align: center;
+    background-color: #212121;
+    font-family: 'Amatic SC', cursive;
+    color: #f4c638;
+}
+#graph_apply {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    height: 70vh;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+#tester {
+    width: 60%; 
+    height: 100%;
+    padding-bottom: 0px;
+    padding-top: 20px;
+}
+
+.select_list {
+    
+}
