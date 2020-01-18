@@ -1,0 +1,22 @@
+{
+  "name": "hackcambridge20",
+  "version": "1.0.0",
+  "description": "Hack Cambridge Project 2020",
+  "main": "requests.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkraj/hackcambridge20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexkraj/hackcambridge20/issues"
+  },
+  "homepage": "https://github.com/alexkraj/hackcambridge20#readme",
+  "dependencies": {
+    "azure-arm-datalake-store": "^3.1.1-preview"
+  }
+}
