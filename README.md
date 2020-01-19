@@ -1,2 +1,2 @@
 # hackcambridge20
-Team Irina, Connor, Alex, and James
+Team Irina, Connor, Alex, and James.
