@@ -1,8 +1,14 @@
 // time, total energy of the house, total of each appliance,,,,
 
+var arr = ['f_fridge','f_heating','f_television']
+
 function start_up(val){
-    TESTER = document.getElementById('tester');
-    console.log(val.previous);
+    p_fridge = document.getElementById('tester');
+    p_heating = document.getElementById('tester');
+    p_television = document.getElementById('tester');
+    f_fridge = document.getElementById('tester');
+    f_heating = document.getElementById('tester');
+    f_television = document.getElementById('tester');
     var trace = {
         x: val.previous.time,
         y: val.previous.fridge,
@@ -76,61 +82,14 @@ function start_up(val){
         }
     }
 
-    Plotly.plot( TESTER, fridge_previous, layout, {responsive: true} );
-    Plotly.plot( TESTER, heating_previous, layout, {responsive: true} );
-    Plotly.plot( TESTER, TV_previous, layout, {responsive: true} );
-    Plotly.plot( TESTER, fridge_future, layout, {responsive: true} );
-    Plotly.plot( TESTER, heating_future, layout, {responsive: true} );
-    Plotly.plot( TESTER, TV_future, layout, {responsive: true} );
-
-    TOTALS = document.getElementById('totals-graph');
-
-    var trace = {
-        x: val.future.time,
-        y: val.future.fridge,
-        name: "Fridge (future)"
-    };
-    var fridge_future = [trace];
-
-    var layout = {
-        font: {
-            family: 'Amatic SC',
-            size: 18,
-            color: '#ffffff'
-        },
-        autosize: true,
-        plot_bgcolor:"#000000",
-        paper_bgcolor:"#000000",
-        xaxis: {
-            title: {
-                text: 'Days'
-            },
-            tick0: 0,
-            dtick: 1, 
-            ticklen: 8,
-            showline: true,
-            gridcolor: '#404040',
-            linecolor: '#404040'
-        },
-        yaxis: {
-            title: {
-                text: 'Usage'
-            },
-            tick0: 0,
-            ticklen: 8,
-            showline: true,
-            gridcolor: '#404040',
-            linecolor: '#404040'
-        },
-        margin : { 
-            t: 0 
-        }
-    }
-
-    //Plotly.plot( TOTALS, fridge_future, layout, {responsive: true} );
+    Plotly.plot( p_fridge, fridge_previous, layout, {responsive: true} );
+    Plotly.plot( p_heating, heating_previous, layout, {responsive: true} );
+    Plotly.plot( p_television, TV_previous, layout, {responsive: true} );
+    Plotly.plot( f_fridge, fridge_future, layout, {responsive: true} );
+    Plotly.plot( f_heating, heating_future, layout, {responsive: true} );
+    Plotly.plot( f_television, TV_future, layout, {responsive: true} );
 
 }
-
 
 function populateGraph(){
     event.preventDefault()
@@ -140,11 +99,21 @@ function getData(){
     event.preventDefault()
 }
 
-function sendPrediction(item, value_decrease){
-    event.preventDefault()
+function sendPrediction(){
+    event.preventDefault();
+    var network_link = document.getElementById("neural_ID").value;
+    var time_decrese = document.getElementById("decrease_range").value;
+    console.log(network_link,time_decrese);
+    // deleteTrace(arr[network_link]);
+   
 }
+
+function deleteTrace(divId){
+    Plotly.deleteTraces(divId, 0);
+};
 
 function updateGraph(){
     event.preventDefault();
+    sendPrediction(); 
     console.log("clicked update");
 }

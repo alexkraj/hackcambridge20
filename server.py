@@ -1,20 +1,15 @@
 # PYTHON FLASK SERVER
 from flask import Flask, render_template, request
+import requests
 import json
 import data_generator
 import os, uuid
 from azure.storage.blob import BlobServiceClient, BlobClient
 
 app = Flask(__name__)
-json_data = data_generator.generate_JSON()
+json_data = data_generator.generate_JSON(1,1,1)
 
-# def upload_to_datalake(local_path, connection_string, container_name):
-#     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-#     blob_client = blob_service_client.get_blob_client(container=container_name, blob=local_path)
-#     data = open(local_path, "rb")
-#     blob_client.upload_blob(data)
-
-@app.route("/")
+@app.route("/", methods=['GET'])
 def load_landing():
     initial_values = json_data
     return render_template("home.html", values = initial_values)
@@ -42,4 +37,5 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
+# https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearning/webServices/{webServiceName}?api-version=2016-05-01-preview
 # https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearning/webServices/{webServiceName}?api-version=2016-05-01-preview

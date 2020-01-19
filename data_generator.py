@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 applicances = ['Fridge', 'Heating', 'TV']
 
-def heating_func(hour):
-    return (numpy.sin(hour/24*numpy.pi) + 1.5) * 0.3
+def heating_func(hour, slider):
+    return (numpy.sin(hour/24*numpy.pi) + 1.5) * 0.3*slider
 
 def moving_average(x, w):
     return numpy.convolve(x, numpy.ones(w), 'valid') / w
@@ -24,24 +24,24 @@ def new_average(x, w=24):
     return numpy.array(averages)
 
 
-def week_generator():
+def week_generator(TV_slider=1, fridge_slider=1, heating_slider=1):
     week = 24*7
 
     time = numpy.arange(0, week)
 
 
-    fridge_level = 0.8
+    fridge_level = 0.8*fridge_slider
 
     TV_daily = numpy.zeros(24)
 
-    TV_daily[6:9] = 0.8
-    TV_daily[18:20] = 0.7
+    TV_daily[6:9] = 0.8*TV_slider
+    TV_daily[18:20] = 0.7*TV_slider
 
 
     heating_daily = numpy.empty(24)
 
     for i in range(len(heating_daily)):
-        heating_daily[i] = heating_func(i)
+        heating_daily[i] = heating_func(i, heating_slider)
 
 
 
@@ -59,9 +59,9 @@ def week_generator():
 
     return new_average(heating_week), new_average(fridge_week), new_average(TV_week), new_average(total_energy)
 
-def generate_JSON():
+def generate_JSON(TV_slider, fridge_slider, heating_slider):
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
-    future_heat, future_fridge, future_TV, future_total = week_generator()
+    future_heat, future_fridge, future_TV, future_total = week_generator(TV_slider, fridge_slider, heating_slider)
     future_heat[0] = prev_heat[-1]
     future_fridge[0] = prev_fridge[-1]
     future_TV[0] = prev_TV[-1]
@@ -85,4 +85,4 @@ def generate_JSON():
 
     return (parsed_JSON)
 
-generate_JSON()
+generate_JSON(1,1,1)
