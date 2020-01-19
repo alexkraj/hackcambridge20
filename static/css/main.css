@@ -1,0 +1,82 @@
+body {
+    background-color: #009933;
+}
+
+#main-heading{
+    color: white;
+}
+
+#predict-heading{
+}
+
+#content {
+    text-align: center;
+    background-color: #d9d9d9;
+    font-family: 'Amatic SC', monospace;
+    color: #f4c638;
+}
+#graph_apply {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    background-color: #f2f2f2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#right {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+}
+
+#form {
+    padding-left: 30px;
+    text-align: left;
+    min-width: 100px;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Amatic SC', monospace;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Amatic SC', monospace;
+    font-size: 30px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+label {
+    font-family: monospace;
+    color: black;
+    font-size: 15px;
+    padding-right: 15px;
+}
+
+#tester {
+    width: 60%; 
+    height: 100%;
+}
+
+#btnSubmit {
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #009933; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'Amatic SC', monospace;
+    margin: 4px 2px;
+    cursor: pointer;
+}

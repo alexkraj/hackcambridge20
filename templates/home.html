@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='requests.js') }}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-        <title>Future Use</title> 
+        <title>Future Use</title>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet"> 
     </head>
 
-    <body>
-
-        <div class="header">
-          <h1>Future Use</h1>
+    <body onload='start_up({{values}})'>
+        <div class="container"  id="container">
+          <h1 id="main-heading">Future-Use</h1>
+            <div id="graph_apply">
+                <div id="tester"></div>
+                <div id="right">
+                    <h2 id="predict-heading">Adjust the slider below to predict your savings</h2>
+                      <div id="form-holder">
+                        <form id="form">
+                          <div id="left-form">
+                            <input type="checkbox" id="a_fridge" checked><label for="a_fridge">[Fridge]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="fridge_range"><label>24</label><br/>
+                            <input type="checkbox" id="a_heating" checked> <label for="a_heating">[Heating]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="heating_range"><label>24</label><br/>
+                            <input type="checkbox" id="a_television"  checked> <label for="a_television">[Television]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="television_range"><label>24</label><br/>
+                          </div>
+                          <a class="button btnSubmit" id="btnSubmit" onclick="updateGraph()">SUBMIT</a>
+                        </form>
+                      </div>
+                </div>    
+            </div>
         </div>
-    
-        <div class="navBar"> 
-        </div>
-    
-        <div class="container" id="containter">
-          <div class="main" id="main">
-              <a class="graph">insert the graph stuff here</a>
-          </div>
-        </div>
-        
-      </body>
+    </body>
 </html>
