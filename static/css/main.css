@@ -28,7 +28,7 @@ body {
 }
 
 #right {
-    width: 40%;
+    width: 30%;
     height: 100%;
     text-align: center;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 80px;
     font-family: 'Amatic SC', monospace;
     text-align: center;
 }
@@ -60,7 +60,7 @@ label {
 }
 
 #tester {
-    width: 60%; 
+    width: 70%; 
     height: 100%;
 }
 
