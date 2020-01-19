@@ -23,14 +23,28 @@
                       <div id="form-holder">
                         <form id="form">
                           <div id="left-form">
-                            <input type="checkbox" id="a_fridge" checked><label for="a_fridge">[Fridge]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="fridge_range"><label>24</label><br/>
-                            <input type="checkbox" id="a_heating" checked> <label for="a_heating">[Heating]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="heating_range"><label>24</label><br/>
-                            <input type="checkbox" id="a_television"  checked> <label for="a_television">[Television]</label><label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="television_range"><label>24</label><br/>
+                            <select name="Appliance" class="select_list part">
+                              <option value="0">Fridge</option>
+                              <option value="1">Freezer1</option>
+                              <option value="2">Freezer2</option>
+                              <option value="3">Washer Dryer</option>
+                              <option value="4">Washing Machine</option>
+                              <option value="5">Dishwasher</option>
+                              <option value="6">Computer</option>
+                              <option value="7">TV</option>
+                              <option value="8">Electric Heater</option>
+                            </select>
+                            
+                            <label>0</label><input type="range" min="0" max="24" value="12" class="slider" id="television_range"><label>24</label><br/>
                           </div>
                           <a class="button btnSubmit" id="btnSubmit" onclick="updateGraph()">UPDATE</a>
                         </form>
                       </div>
                 </div>    
+            </div>
+            <div>
+              <div id="totals-graph">
+              </div>
             </div>
         </div>
     </body>

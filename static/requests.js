@@ -1,23 +1,20 @@
+// time, total energy of the house, total of each appliance,,,,
+
 function start_up(val){
     TESTER = document.getElementById('tester');
-    console.log(val.previous.TV);
-    var x_a = [...Array(168).keys()];
-    var x_b = [...Array(168).keys()];
-    for (var i=0; i<168; i++){
-        x_b[i] = 168+i; 
-    }
+    console.log(val.previous);
     var trace = {
-        x: x_a,
+        x: val.previous.time,
         y: val.previous.fridge,
         name: "Fridge (history)"
     };
     var trace2 = {
-        x: x_a,
+        x: val.previous.time,
         y: val.previous.heating,
         name: "Heating (history)"
     };
     var trace3 = {
-        x: x_a,
+        x: val.previous.time,
         y: val.previous.TV ,
         name: "Television (history)"
     };
@@ -26,17 +23,17 @@ function start_up(val){
     var TV_previous = [trace3];
     
     var trace = {
-        x: x_b,
+        x: val.future.time,
         y: val.future.fridge,
         name: "Fridge (future)"
     };
     var trace2 = {
-        x: x_b,
+        x: val.future.time,
         y: val.future.heating,
         name: "Heating (future)"
     };
     var trace3 = {
-        x: x_b,
+        x: val.future.time,
         y: val.future.TV ,
         name: "Television (future)"
     };
@@ -48,21 +45,21 @@ function start_up(val){
         font: {
             family: 'Amatic SC',
             size: 18,
-            color: '#000000'
+            color: '#ffffff'
         },
         autosize: true,
-        plot_bgcolor:"#d9d9d9",
-        paper_bgcolor:"#d9d9d9",
+        plot_bgcolor:"#000000",
+        paper_bgcolor:"#000000",
         xaxis: {
             title: {
                 text: 'Days'
             },
             tick0: 0,
-            dtick: 10, 
+            dtick: 1, 
             ticklen: 8,
             showline: true,
-            gridcolor: '#454545',
-            linecolor: '#000000'
+            gridcolor: '#404040',
+            linecolor: '#404040'
         },
         yaxis: {
             title: {
@@ -71,8 +68,8 @@ function start_up(val){
             tick0: 0,
             ticklen: 8,
             showline: true,
-            gridcolor: '#454545',
-            linecolor: '#000000'
+            gridcolor: '#404040',
+            linecolor: '#404040'
         },
         margin : { 
             t: 0 
@@ -82,10 +79,56 @@ function start_up(val){
     Plotly.plot( TESTER, fridge_previous, layout, {responsive: true} );
     Plotly.plot( TESTER, heating_previous, layout, {responsive: true} );
     Plotly.plot( TESTER, TV_previous, layout, {responsive: true} );
-
     Plotly.plot( TESTER, fridge_future, layout, {responsive: true} );
     Plotly.plot( TESTER, heating_future, layout, {responsive: true} );
     Plotly.plot( TESTER, TV_future, layout, {responsive: true} );
+
+    TOTALS = document.getElementById('totals-graph');
+
+    var trace = {
+        x: val.future.time,
+        y: val.future.fridge,
+        name: "Fridge (future)"
+    };
+    var fridge_future = [trace];
+
+    var layout = {
+        font: {
+            family: 'Amatic SC',
+            size: 18,
+            color: '#ffffff'
+        },
+        autosize: true,
+        plot_bgcolor:"#000000",
+        paper_bgcolor:"#000000",
+        xaxis: {
+            title: {
+                text: 'Days'
+            },
+            tick0: 0,
+            dtick: 1, 
+            ticklen: 8,
+            showline: true,
+            gridcolor: '#404040',
+            linecolor: '#404040'
+        },
+        yaxis: {
+            title: {
+                text: 'Usage'
+            },
+            tick0: 0,
+            ticklen: 8,
+            showline: true,
+            gridcolor: '#404040',
+            linecolor: '#404040'
+        },
+        margin : { 
+            t: 0 
+        }
+    }
+
+    //Plotly.plot( TOTALS, fridge_future, layout, {responsive: true} );
+
 }
 
 

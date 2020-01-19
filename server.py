@@ -6,7 +6,6 @@ import os, uuid
 from azure.storage.blob import BlobServiceClient, BlobClient
 
 app = Flask(__name__)
-
 json_data = data_generator.generate_JSON()
 
 # def upload_to_datalake(local_path, connection_string, container_name):
@@ -36,7 +35,11 @@ def calculate_savings():
     value = int(request.form['value'])
 # @app.route("/change", methods=['POST'])
 
+# @app.route()
+
 
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+# https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearning/webServices/{webServiceName}?api-version=2016-05-01-preview

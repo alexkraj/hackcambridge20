@@ -11,7 +11,7 @@ body {
 
 #content {
     text-align: center;
-    background-color: #d9d9d9;
+    background-color: #666666;
     font-family: 'Amatic SC', monospace;
     color: #f4c638;
 }
@@ -26,6 +26,22 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+#totals-background {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    background-color: #f2f2f2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#totals-apply {
+    width: 70%; 
+    height: 100%;
+}
+
 
 #right {
     width: 30%;
@@ -61,7 +77,6 @@ label {
 
 #tester {
     width: 70%; 
-    height: 100%;
 }
 
 #btnSubmit {
