@@ -63,7 +63,7 @@ def generate_JSON():
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
     future_heat, future_fridge, future_TV, future_total = week_generator()
     future_heat[0] = prev_heat[-1]
-    future_fridge[0] = prev_heat[-1]
+    future_fridge[0] = prev_fridge[-1]
     future_TV[0] = prev_TV[-1]
     time = numpy.arange(len(prev_heat))
     future_time = numpy.arange(len(prev_heat)-1, 2*len(prev_heat)-1)
