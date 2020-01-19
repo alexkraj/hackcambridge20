@@ -15,14 +15,18 @@
         <div id="tester"></div>
         <div id="right">
             <h2>Now, predict your future usage!</h2>
-            <select name="Appliance">
-                <option value="nothing">Air</option>
-                <option value="kettle">Kettle</option>
-                <option value="cooker">Cooker</option>
-                <option value="Hoover">Hoover</option>
-                <option value="freezer">Freezer</option>
-                <option value="dishwasher">Dishwasher</option>
-            </select>  
+            <form id="form">
+                <select name="Appliance" class="select_list">
+                    <option value="nothing">Air</option>
+                    <option value="kettle">Kettle</option>
+                    <option value="cooker">Cooker</option>
+                    <option value="hoover">Hoover</option>
+                    <option value="freezer">Freezer</option>
+                    <option value="dishwasher">Dishwasher</option>
+                </select>
+                <input type="range" min="0" max="24" value="12" class="slider" id="myRange">  
+                <input type="submit">
+            </form>
         </div>    
     </div>
     <script src="script.js"></script>

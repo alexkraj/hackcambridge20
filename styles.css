@@ -20,6 +20,7 @@
     justify-content: flex-start;
     width: 40%;
     height: 100%;
+    text-align: left;
 }
 
 h1 {
@@ -30,6 +31,7 @@ h2 {
     font-size: 30px;
     margin-top: 0px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 #tester {
@@ -39,6 +41,13 @@ h2 {
     padding-top: 20px;
 }
 
-.select_list {
-    
+#form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: stretch;
+    width: 40%;
+    height: 100%;
+    text-align: left;
 }

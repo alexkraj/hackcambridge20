@@ -14,7 +14,7 @@ var layout = {
         },
         tick0: 0,
         // something to change --> 
-        dtick: 0.25, // <--
+        dtick: 1, // <--
         ticklen: 8,
         showline: true,
         gridcolor: '#454545',
