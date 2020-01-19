@@ -16,16 +16,24 @@
         <div id="right">
             <h2>Now, predict your future usage!</h2>
             <form id="form">
-                <select name="Appliance" class="select_list">
-                    <option value="nothing">Air</option>
-                    <option value="kettle">Kettle</option>
-                    <option value="cooker">Cooker</option>
-                    <option value="hoover">Hoover</option>
-                    <option value="freezer">Freezer</option>
-                    <option value="dishwasher">Dishwasher</option>
-                </select>
-                <input type="range" min="0" max="24" value="12" class="slider" id="myRange">  
-                <input type="submit">
+                <ol>
+                    <li>
+                        <p>Choose the appliance</p>
+                        <select name="Appliance" class="select_list part">
+                            <option value="0">Air</option>
+                            <option value="1">Kettle</option>
+                            <option value="2">Cooker</option>
+                            <option value="3">Hoover</option>
+                            <option value="4">Freezer</option>
+                            <option value="5">Dishwasher</option>
+                        </select>
+                    </li>
+                    <li>
+                        <p>Choose the time of use</p>
+                        <input type="range" min="0" max="24" step="1" value="12" class="slider part" id="myRange">
+                    </li>
+                </ol>
+                <input type="submit" value="Add appliance!" class="part">
             </form>
         </div>    
     </div>
