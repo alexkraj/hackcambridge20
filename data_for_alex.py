@@ -15,10 +15,12 @@ def moving_average(x, w):
 
 def new_average(x, w=24):
     averages = []
-    for i in range(len(x)):
+    for i in range(1,len(x)+1):
         if i % w ==0:
-            average = numpy.mean[x[i-w:i]]
-            averages.append(average)
+            sub_set = x[i-w:i]
+            #print(sub_set)
+            average = numpy.mean(sub_set, axis=0)
+            averages = numpy.append(averages, average)
     return numpy.array(averages)
 
 
@@ -30,7 +32,7 @@ def week_generator():
 
     fridge_level = 0.8
 
-    TV_daily = numpy.empty(24)
+    TV_daily = numpy.zeros(24)
 
     TV_daily[6:9] = 0.8
     TV_daily[18:20] = 0.7
@@ -44,7 +46,7 @@ def week_generator():
 
 
 
-    fridge_week = numpy.tile(fridge_level, 24*7,)
+    fridge_week = numpy.tile(fridge_level, 24*7)
     heating_week = numpy.tile(heating_daily, 7)
     TV_week = numpy.tile(TV_daily, 7)
 
