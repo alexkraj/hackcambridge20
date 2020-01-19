@@ -10,10 +10,8 @@ applicances = ['Fridge', 'Heating', 'TV']
 def heating_func(hour):
     return (numpy.sin(hour/24*numpy.pi) + 1.5) * 0.3
 
-def moving_average(a, n=24) :
-    ret = np.cumsum(a, dtype=float)
-    ret[n:] = ret[n:] - re
-    return ret[n - 1:] / n
+def moving_average(x, w):
+    return np.convolve(x, np.ones(w), 'valid') / w
 
 
 def week_generator():
@@ -54,16 +52,21 @@ def week_generator():
 def generate_JSON():
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
     future_heat, future_fridge, future_TV, future_total = week_generator()
+    time = numpy.arange(len(prev_heat))
+    future_time = numpy.arange(len(prev_heat), 2*len(prev_heat))
 
     json_energy = {"previous":{"fridge":prev_fridge.tolist(),
                         "heating":prev_heat.tolist(),
                         "TV":prev_TV.tolist(),
-                        "total": prev_total.tolist()},
+                        "total": prev_total.tolist(),
+                        "time":time.tolist()},
             "future":{"fridge":future_fridge.tolist(),
                                 "heating":future_heat.tolist(),
                                 "TV":future_TV.tolist(),
-                                "total": future_total.tolist()}
+                                "total": future_total.tolist(),
+                                "time":future_time.tolist()}
                                 }
+
 
     parsed_JSON = json.dumps(json_energy, indent=4, sort_keys=True)
 
