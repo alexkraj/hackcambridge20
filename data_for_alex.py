@@ -11,7 +11,7 @@ def heating_func(hour):
     return (numpy.sin(hour/24*numpy.pi) + 1.5) * 0.3
 
 def moving_average(x, w):
-    return np.convolve(x, np.ones(w), 'valid') / w
+    return numpy.convolve(x, numpy.ones(w), 'valid') / w
 
 
 def week_generator():
