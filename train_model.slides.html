@@ -13237,7 +13237,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
@@ -13259,24 +13259,6 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Using TensorFlow backend.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13288,7 +13270,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">series_to_supervised</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_in</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_out</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dropnan</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -13330,7 +13312,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load dataset</span>
@@ -13344,48 +13326,6 @@ a.anchor-link {
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/James/opt/anaconda3/lib/python3.7/site-packages/numpy/lib/arraysetops.py:568: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
-  mask |= (ar1 == a)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>      var1(t-1)  var2(t-1)  var3(t-1)   var2(t)   var3(t)   var4(t)   var5(t)  \
-1  0.000000e+00   0.379069   0.300719  0.481928  0.313669  0.919260  0.475207   
-2  9.536743e-07   0.481928   0.313669  0.483186  0.358273  0.917922  0.475207   
-3  9.536743e-07   0.483186   0.358273  0.484445  0.361151  0.919693  0.475207   
-4  1.907349e-06   0.484445   0.361151  0.329617  0.379856  0.927326  0.326446   
-5  1.907349e-06   0.329617   0.379856  0.316490  0.375540  0.924730  0.309917   
-
-   var6(t)  var7(t)   var8(t)  
-1      0.0   0.0125  0.516129  
-2      0.0   0.0250  0.548387  
-3      0.0   0.0125  0.548387  
-4      0.0   0.0125  0.548387  
-5      0.0   0.0250  0.548387  
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13422,14 +13362,15 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Seperating-Training-and-Testing">Seperating Training and Testing<a class="anchor-link" href="#Seperating-Training-and-Testing">&#182;</a></h2><p>The overall dataset is huge so we trained using the first $\sim 16$ months of data. A test set was then generated for just a few months following this sample. The training data has to be reshaped so that it can be fed into the <em>Long Short-Term Memory Cells</em> or <strong>LSTMs</strong> that are used in the network.</p>
+<h2 id="Seperating-Training-and-Testing">Seperating Training and Testing<a class="anchor-link" href="#Seperating-Training-and-Testing">&#182;</a></h2><hr>
+<p>The overall dataset is huge so we trained using the first $\sim 16$ months of data. A test set was then generated for just a few months following this sample. The training data has to be reshaped so that it can be fed into the <em>Long Short-Term Memory Cells</em> or <strong>LSTMs</strong> that are used in the network.</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">reframed</span><span class="o">.</span><span class="n">values</span>
@@ -13449,28 +13390,20 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(614762, 1, 9) (614762,) (122952, 1, 9) (122952,)
-</pre>
-</div>
-</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Training-Model">Training Model<a class="anchor-link" href="#Training-Model">&#182;</a></h2><hr>
+<p>Here we define the model that is going to be trained. This is a very simple model comprised of <strong>50 LSTM</strong> cells that feed into a single dense layer. This dense layer outputs a single value; the value we want for the next time step. The loss function used is the <em>Mean Absolute Error</em>.</p>
+<p>$mae = |PredictedValue-TrueValue|$</p>
 
 </div>
 </div>
-
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># design network</span>
@@ -13484,14 +13417,44 @@ a.anchor-link {
 </div>
 </div>
 
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Callback-Systems">Callback Systems<a class="anchor-link" href="#Callback-Systems">&#182;</a></h2><hr>
+<p>We use some of the pre-built Keras callback classes to speed up our training processes and make sure that the model we used is the best that we have made so far.</p>
+<p>The first callback used is an <code>EarlyStopping</code> class. This class halts the training if the validation loss has not improved for a set number of epochs known as the <em>patience</em>.</p>
+
 </div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">earlyStopping</span> <span class="o">=</span> <span class="n">EarlyStopping</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
-<span class="n">mcp_save</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="s1">&#39;.mdl_wts.hdf5&#39;</span><span class="p">,</span> <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next class used is a <code>ModelCheckpoint</code> class. This saves the models throughout the training run so that we can always pull back to the model that performed the best so far. If <code>EarlyStopping</code> activates then this means the model will revert back to the state it was 10 epochs ago.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mcp_save</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="s1">&#39;.mdl_wts.hdf5&#39;</span><span class="p">,</span> <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
 <span class="n">reduce_lr_loss</span> <span class="o">=</span> <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13499,26 +13462,14 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/James/opt/anaconda3/lib/python3.7/site-packages/keras/callbacks/callbacks.py:998: UserWarning: `epsilon` argument is deprecated and will be removed, use `min_delta` instead.
-  warnings.warn(&#39;`epsilon` argument is deprecated and &#39;
-</pre>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Now-we-begin-training!">Now we begin training!<a class="anchor-link" href="#Now-we-begin-training!">&#182;</a></h3>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -13534,76 +13485,15 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Train on 614762 samples, validate on 122952 samples
-Epoch 1/50
- - 67s - loss: 0.1254 - val_loss: 0.1146
-Epoch 2/50
- - 64s - loss: 0.1089 - val_loss: 0.1022
-Epoch 3/50
- - 63s - loss: 0.1046 - val_loss: 0.0998
-Epoch 4/50
- - 65s - loss: 0.1027 - val_loss: 0.0999
-Epoch 5/50
- - 80s - loss: 0.1013 - val_loss: 0.0996
-Epoch 6/50
- - 97s - loss: 0.1002 - val_loss: 0.0993
-Epoch 7/50
- - 65s - loss: 0.0992 - val_loss: 0.0989
-Epoch 8/50
- - 76s - loss: 0.0983 - val_loss: 0.0987
-Epoch 9/50
- - 77s - loss: 0.0974 - val_loss: 0.0980
-Epoch 10/50
- - 74s - loss: 0.0961 - val_loss: 0.0969
-Epoch 11/50
- - 68s - loss: 0.0943 - val_loss: 0.0947
-Epoch 12/50
- - 75s - loss: 0.0911 - val_loss: 0.0903
-Epoch 13/50
- - 77s - loss: 0.0856 - val_loss: 0.0839
-Epoch 14/50
- - 89s - loss: 0.0795 - val_loss: 0.0815
-Epoch 15/50
- - 72s - loss: 0.0768 - val_loss: 0.0797
-Epoch 16/50
- - 75s - loss: 0.0756 - val_loss: 0.0753
-Epoch 17/50
- - 84s - loss: 0.0746 - val_loss: 0.0741
-Epoch 18/50
- - 70s - loss: 0.0737 - val_loss: 0.0732
-Epoch 19/50
- - 85s - loss: 0.0729 - val_loss: 0.0726
-Epoch 20/50
- - 80s - loss: 0.0721 - val_loss: 0.0716
-Epoch 21/50
- - 70s - loss: 0.0715 - val_loss: 0.0711
-Epoch 22/50
- - 80s - loss: 0.0709 - val_loss: 0.0704
-Epoch 23/50
- - 69s - loss: 0.0701 - val_loss: 0.0694
-Epoch 24/50
- - 72s - loss: 0.0697 - val_loss: 0.0688
-Epoch 25/50
- - 83s - loss: 0.0692 - val_loss: 0.0683
-Epoch 26/50
-</pre>
-</div>
-</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we plot the training loss and the validation loss over time. As you can see eventually the validation loss is below the training loss. This could be a case of overfitting.</p>
 
 </div>
 </div>
-
-</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -13620,6 +13510,15 @@ Epoch 26/50
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testing-the-Model">Testing the Model<a class="anchor-link" href="#Testing-the-Model">&#182;</a></h2><hr>
+<p>Here we test the accuracy of the model by giving it data that it has not been trained on from the rest of the time series. We can see how it continues trends and whether that matches the data that we have. We have to scale back out of our reduced scaling before calculating the *Root Mean Square</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
