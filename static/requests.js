@@ -3,13 +3,14 @@
 var arr = ['f_fridge','f_heating','f_television']
 
 function start_up(val){
+    TESTER = document.getElementById('tester');
     p_fridge = document.getElementById('tester');
     p_heating = document.getElementById('tester');
     p_television = document.getElementById('tester');
     f_fridge = document.getElementById('tester');
     f_heating = document.getElementById('tester');
     f_television = document.getElementById('tester');
-    var trace = {
+    var trace1 = {
         x: val.previous.time,
         y: val.previous.fridge,
         name: "Fridge (history)"
@@ -24,28 +25,28 @@ function start_up(val){
         y: val.previous.TV ,
         name: "Television (history)"
     };
-    var fridge_previous = [trace];
+    var fridge_previous = [trace1];
     var heating_previous = [trace2];
     var TV_previous = [trace3];
     
-    var trace = {
+    var trace4 = {
         x: val.future.time,
         y: val.future.fridge,
         name: "Fridge (future)"
     };
-    var trace2 = {
+    var trace5 = {
         x: val.future.time,
         y: val.future.heating,
         name: "Heating (future)"
     };
-    var trace3 = {
+    var trace6 = {
         x: val.future.time,
         y: val.future.TV ,
         name: "Television (future)"
     };
-    var fridge_future = [trace];
-    var heating_future = [trace2];
-    var TV_future = [trace3];
+    var fridge_future = [trace4];
+    var heating_future = [trace5];
+    var TV_future = [trace6];
 
     var layout = {
         font: {
@@ -81,13 +82,16 @@ function start_up(val){
             t: 0 
         }
     }
+    // var data = [trace1,trace2,trace3,trace4,trace5,trace6];
+    // Plotly.newPlot(TESTER,);
 
-    Plotly.plot( p_fridge, fridge_previous, layout, {responsive: true} );
-    Plotly.plot( p_heating, heating_previous, layout, {responsive: true} );
-    Plotly.plot( p_television, TV_previous, layout, {responsive: true} );
-    Plotly.plot( f_fridge, fridge_future, layout, {responsive: true} );
-    Plotly.plot( f_heating, heating_future, layout, {responsive: true} );
-    Plotly.plot( f_television, TV_future, layout, {responsive: true} );
+    var a = Plotly.plot( TESTER, fridge_previous, layout, {responsive: true} );
+    var b = Plotly.plot( TESTER, heating_previous, layout, {responsive: true} );
+    var c = Plotly.plot( TESTER, TV_previous, layout, {responsive: true} );
+    var d = Plotly.plot( TESTER, fridge_future, layout, {responsive: true} );
+    var e = Plotly.plot( TESTER, heating_future, layout, {responsive: true} );
+    var f = Plotly.plot( TESTER, TV_future, layout, {responsive: true} );
+
 
 }
 
