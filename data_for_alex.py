@@ -65,8 +65,8 @@ def generate_JSON():
     future_heat[0] = prev_heat[-1]
     future_fridge[0] = prev_fridge[-1]
     future_TV[0] = prev_TV[-1]
-    time = numpy.arange(len(prev_heat))
-    future_time = numpy.arange(len(prev_heat)-1, 2*len(prev_heat)-1)
+    time = numpy.arange(-len(prev_heat)+1,1,1)
+    future_time = numpy.arange(0, len(prev_heat),1)
 
     json_energy = {"previous":{"fridge":prev_fridge.tolist(),
                         "heating":prev_heat.tolist(),
