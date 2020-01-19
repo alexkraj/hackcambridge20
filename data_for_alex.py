@@ -10,6 +10,11 @@ applicances = ['Fridge', 'Heating', 'TV']
 def heating_func(hour):
     return (numpy.sin(hour/24*numpy.pi) + 1.5) * 0.3
 
+def moving_average(a, n=24) :
+    ret = np.cumsum(a, dtype=float)
+    ret[n:] = ret[n:] - re
+    return ret[n - 1:] / n
+
 
 def week_generator():
     week = 24*7
@@ -44,7 +49,7 @@ def week_generator():
 
     total_energy = numpy.add(numpy.add(heating_week, fridge_week), TV_week)
 
-    return heating_week, fridge_week, TV_week, total_energy
+    return moving_average(heating_week), moving_average(fridge_week), moving_average(TV_week), moving_average(total_energy)
 
 def generate_JSON():
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
