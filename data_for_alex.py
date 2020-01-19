@@ -13,6 +13,14 @@ def heating_func(hour):
 def moving_average(x, w):
     return numpy.convolve(x, numpy.ones(w), 'valid') / w
 
+def new_average(x, w):
+    averages = []
+    for i in range(len(x)):
+        if i % 24 ==0:
+            average = numpy.mean[x[i-24:i]]
+            averages.append(average)
+    return numpy.array(averages)
+
 
 def week_generator():
     week = 24*7
@@ -52,6 +60,9 @@ def week_generator():
 def generate_JSON():
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
     future_heat, future_fridge, future_TV, future_total = week_generator()
+    future_heat[0] = prev_heat[-1]
+    future_fridge[0] = prev_heat[-1]
+    future_TV[0] = prev_TV[-1]
     time = numpy.arange(len(prev_heat))
     future_time = numpy.arange(len(prev_heat), 2*len(prev_heat))
 
