@@ -13,11 +13,11 @@ def heating_func(hour):
 def moving_average(x, w):
     return numpy.convolve(x, numpy.ones(w), 'valid') / w
 
-def new_average(x, w):
+def new_average(x, w=24):
     averages = []
     for i in range(len(x)):
-        if i % 24 ==0:
-            average = numpy.mean[x[i-24:i]]
+        if i % w ==0:
+            average = numpy.mean[x[i-w:i]]
             averages.append(average)
     return numpy.array(averages)
 
@@ -55,7 +55,7 @@ def week_generator():
 
     total_energy = numpy.add(numpy.add(heating_week, fridge_week), TV_week)
 
-    return moving_average(heating_week), moving_average(fridge_week), moving_average(TV_week), moving_average(total_energy)
+    return new_average(heating_week), new_average(fridge_week), new_average(TV_week), new_average(total_energy)
 
 def generate_JSON():
     prev_heat, prev_fridge, prev_TV, prev_total = week_generator()
